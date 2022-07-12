@@ -58,8 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_221812) do
   end
 
   add_foreign_key "comments", "posts", column: "posts_id"
-  add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "likes", "posts", column: "posts_id"
-  add_foreign_key "likes", "users", column: "users_id"
-  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "likes", "users", column: "author_id"
+  add_foreign_key "posts", "users", column: "author_id"
 end
