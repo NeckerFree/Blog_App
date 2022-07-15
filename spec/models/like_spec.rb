@@ -15,7 +15,6 @@ RSpec.describe Like, type: :model do
   context 'Like validations' do
     it 'validate update_likes_counter method' do
       @like.update_likes_counter
-      # expect(@post.id).to eq(100)
       expect(@like.post.likes_counter).to be > 0
     end
   end
