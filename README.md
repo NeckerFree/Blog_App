@@ -8,21 +8,32 @@
 
 - Ruby on Rails
 
-## Development set up
+## Getting Started
 
-Clone Repository using
-
+To get a local copy up and running follow these simple example steps.
+- Clone Repository using
 `git clone https://github.com/NeckerFree/Blog_App`
-
-Move into project directory
-
+- Move into project directory
 `cd Blog_App`
+### Setup Database 
+- Make sure that your Postgres database is installed.
+-  Open the file config\database.yml
+- Modify the connection parameters to point your Postgres      Database:
+    `username: [your_user]`
+    `password: [your_password]`
 
-## Available Scripts
+- If required drop existing database : `rake db:drop`
+- Create databases: `rake db:create`
+- Create db structure including tables : `rake db:migrate`
+- If required seed initial data (stored in db\seeds.rb file): `rails db:seed`
+### Run Tests
+- Install rspec: `bundle install`
+- Run all tests: `rspec`
+- Run all tests and show test documentation: `rspec spec --format documentation`
 
-## Available Scripts to Run Test cases
-
->Run following command
+### Run App
+- If required (Not for testing) run `rails server`
+- Visit http://localhost:3000/ in your browser!
 
 ## Author
 
