@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
                      post_counter: 0)
     @user.save
   end
-  context 'User validations' do
+  context 'Users validations' do
     it 'name should not be blank' do
       @user.name = ''
       expect(@user).to_not be_valid
@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
 
-    it 'last 3 post' do
+    it 'validate recent_posts method' do
       post1 = Post.new(author_id: @user.id, title: 'My first post', text: 'My first post content',
                        comments_counter: 0, likes_counter: 0)
       post1.save

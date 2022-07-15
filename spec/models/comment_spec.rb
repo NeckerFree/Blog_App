@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
     @comment = Comment.create(post_id: @post.id, author_id: @user.id, text: 'This is my fifth comment')
     @comment.save
   end
-  context 'Post validations' do
+  context 'Comments validations' do
     it 'validate update_comments_counter method' do
       @comment.update_comments_counter
       expect(@comment.post.comments_counter).to be > 0

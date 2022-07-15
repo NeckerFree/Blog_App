@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
     @post = Post.new(author_id: @user.id, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
     @post.save
   end
-  context 'Post validations' do
+  context 'Posts validations' do
     it 'title should not be blank' do
       @post.title = ''
       expect(@post).to_not be_valid
@@ -29,12 +29,12 @@ RSpec.describe Post, type: :model do
       expect(@post).to_not be_valid
     end
 
-    it 'update_post_counter' do
+    it 'validate update_post_counter method' do
       @post.update_post_counter
       @post.save
        expect(@post.author.post_counter).to be > 0
     end
-    it 'recent comments' do
+    it 'validate recent comments method' do
       comment1 = Comment.new(text: 'This is my first comment', post_id: @post.id, author_id: @user.id)
       comment1.save
       comment2 = Comment.new(text: 'This is my second comment', post_id: @post.id, author_id: @user.id)

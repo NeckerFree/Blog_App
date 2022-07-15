@@ -12,7 +12,7 @@ RSpec.describe Like, type: :model do
     @like = Like.create(post: @post, author: @first_user)
     @like.save
   end
-  context 'Like validations' do
+  context 'Likes validations' do
     it 'validate update_likes_counter method' do
       @like.update_likes_counter
       expect(@like.post.likes_counter).to be > 0
