@@ -1,1 +1,8 @@
-<h1>Show User Info for a given user</h1>
+<div id="userTemplate">
+   <%= render partial: "shared/single_user", locals: { user: @user } %>
+<% @user.posts.each do |post| %>
+     <%= render partial: "shared/single_post", locals: { post: post } %>
+<% end %>
+<%= button_to "See all posts"%>
+ </div>
+
