@@ -13,9 +13,17 @@
  *= require_tree .
  *= require_self
  */
- #singleUser{
-    display: flex;
+
+ #users{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
  }
+ #singleUser, #postHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 
  #singleUser > img{
     border:1px solid black;
@@ -23,6 +31,7 @@
     width: 60px;
     margin: 2px;
  }
+ 
  #userInfo{
     border:1px solid black; 
     display: flex;
@@ -33,13 +42,14 @@
     justify-content: space-around;
  }
 
- #singlePost{
+ #bio, #singlePost, #commentsSection{
    border:1px solid black; 
    display: flex;
    flex-direction: column;
    height:auto;
    width: 308px;
    padding: 5px;
+   margin-bottom: 5px;
  }
 
 .post_title{
@@ -50,7 +60,7 @@ text-align: left;
 text-align: right;
 }
 
-#userTemplate{
+#userTemplate, #postTemplate{
    display: flex;
    flex-direction: column;
    align-items: center;

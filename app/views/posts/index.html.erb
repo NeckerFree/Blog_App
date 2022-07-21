@@ -1,10 +1,8 @@
 <div id="postTemplate">
    <%= render partial: "shared/single_user", locals: { user: @user } %>
 <% @user.posts.each do |post| %>
-     <%= render partial: "shared/single_post", locals: { post: post } %>
-     <% post.comments.each do |comment| %>
-         <label><%= comment.text%></label>
-     <% end %>
+     <%= render partial: "shared/single_post", locals: { post: post } %>   
+     
 <% end %>
-<%= button_to "See all posts"%>
+<%= button_to "Pagination"%>
  </div>

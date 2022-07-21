@@ -1,8 +1,10 @@
-<%= render @post %>
-
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<div id="postTemplate">
+    <div id="singlePost">
+        <div id="postHeader">
+                <h3 class="post_title">Post # <%= @post.id %> by <%= @post.id %> </h3>
+                <label class="counters">Comments:<%= @post.comments_counter %> Likes:<%= @post.likes_counter %> </label>
+        </div>  
+        <p><%= @post.text %></p>
+    </div>
+    <%= render partial: "shared/collection_comments", locals: { post: @post } %>    
 </div>
