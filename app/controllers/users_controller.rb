@@ -7,7 +7,3 @@ class UsersController < ApplicationController
     @user = User.includes(:posts).find(params[:id])
   end
 end
-# puts params
-#     @post = Post.find(params[:id])
-#     @user = current_user
-#     @comments = @post.comments
