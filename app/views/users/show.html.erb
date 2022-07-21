@@ -1,6 +1,7 @@
 <div id="userTemplate">
    <%= render partial: "shared/single_user", locals: { user: @user } %>
    <div id="bio">
+   <h3>Bio</h3>
    <p><%= @user.bio %></p>
    </div>
 <% @user.posts.each do |post| %>

@@ -6,5 +6,5 @@
         </div>  
         <p><%= @post.text %></p>
     </div>
-    <%= render partial: "shared/collection_comments", locals: { post: @post } %>    
+    <%= render partial: "shared/collection_comments", locals: { post: @post, user: @user } %>    
 </div>
