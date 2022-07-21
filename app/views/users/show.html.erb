@@ -4,9 +4,9 @@
    <h3>Bio</h3>
    <p><%= @user.bio %></p>
    </div>
-<% @user.posts.each do |post| %>
+<% @posts.each do |post| %>
      <%= render partial: "shared/single_post", locals: { post: post } %>
 <% end %>
-<%= button_to "See all posts"%>
+<%= button_to "See all posts", { action: "index", controller: "posts"},  method:'get' %>
  </div>
 
