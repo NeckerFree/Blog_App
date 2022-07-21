@@ -1,0 +1,5 @@
+<div id="singlePost">
+        <h3><%= link_to "Post ##{post.id}", controller: "posts", action: "show", post_id: post.id  %></h3>
+        <p><%= post.text %></p>
+        <label class="counters">Comments:<%= post.comments_counter %> Likes:<%= post.likes_counter %> </label>
+ </div>
