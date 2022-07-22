@@ -6,6 +6,13 @@
         </div>  
         <p><%= @post.text %></p>
     </div>
+    <div id="formComment" >
+        <%= form_with model: Comment.new, url: { action: "createcomment" } , method: :post do |f| %>
+        <%= f.label :text %><br>
+        <%= f.text_field :text %><br>
+        <%= f.submit "Create Comment" %>
+        <% end %>  
+   </div>
     <div id="commentsSection">
                 <% @comments.each do |comment| %>
                 <%= render partial: "shared/single_comment", locals: { comment: comment } %>
