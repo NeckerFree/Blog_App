@@ -11,4 +11,5 @@
                 <%= render partial: "shared/single_comment", locals: { comment: comment } %>
                 <% end %>
      </div>
+     <%= button_to "Add like", { action: "create", controller: "likes"},  method:'post' %>
 </div>

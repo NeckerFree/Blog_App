@@ -1,0 +1,10 @@
+<div id="newPostTemplate">
+<%= render partial: "shared/single_user", locals: { user: @user } %>
+ <%= form_with model: Post.new, url: { action: "create" } , method: :post, authenticity_token: false do |f| %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %><br>
+      <%= f.submit "Create Post" %>
+    <% end %>  
+<div> 

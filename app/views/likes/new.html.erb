@@ -1,0 +1,12 @@
+<div id="singleLike">
+    <div id="postHeader">
+        <h3 class="post_title">Post # <%= @post.id %> by <%= @user.name %> </h3>
+        <label class="counters">Comments:<%= @post.comments_counter %> Likes:<%= @post.likes_counter %> </label>
+    </div>  
+    <p><%= @post.text %></p>
+     <div id="formLikes" >
+        <%= form_with model: Comment.new, url: { action: "create" } , method: :post do |f| %>
+       <%=f.hidden_field :post_id, :value => "#{@post.id}", readonly: true%>
+        <%= f.submit "Create Like" %>
+        <% end %>  
+   </div>
