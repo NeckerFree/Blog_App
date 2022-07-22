@@ -15,18 +15,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    parameters= post_params
-    @post= Post.new(author_id: current_user.id, title: parameters[:title], text: parameters[:text], comments_counter: 0, likes_counter: 0)
+    parameters = post_params
+    @post = Post.new(author_id: current_user.id, title: parameters[:title], text: parameters[:text],
+                     comments_counter: 0, likes_counter: 0)
     @post.save
-    redirect_to action: "show", id: current_user.id, post_id: @post.id
-  end 
+    redirect_to action: 'new', controller: 'comments', id: current_user.id, post_id: @post.id
+  end
+
   def createcomment
-    puts current_user.id 
-    parameters= post_comments
+    puts current_user.id
+    parameters = post_comments
     # puts params[:postid]
     puts parameters[:text]
-   
-    @comment= Comment.new(post_id: 41, author_id: current_user.id, text: parameters[:text] )
+
+    @comment = Comment.new(post_id: 41, author_id: current_user.id, text: parameters[:text])
     @comment.save
     # redirect_to action: "show", controller: "posts", id: current_user.id, post_id: @comment.id
     # redirect_to action: "show", controller: "posts"
@@ -34,10 +36,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
-  end   
-  
+  end
+
   def post_comments
     puts params
     params.require(:post).permit(:text)
-  end 
+  end
 end

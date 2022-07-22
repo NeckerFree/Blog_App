@@ -64,6 +64,8 @@
 .counters {
   text-align: right;
 }
+
+#newCommentsTemplate,
 #newPostTemplate,
 #userTemplate,
 #postTemplate {
@@ -80,7 +82,8 @@ button {
   margin-top: 20px;
 }
 
-#newPostTemplate form, #loginForm {
+#newPostTemplate form,
+#loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
