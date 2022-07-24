@@ -98,3 +98,8 @@ input[type='text'] {
 input[type='submit'] {
   margin: 30px;
 }
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+}

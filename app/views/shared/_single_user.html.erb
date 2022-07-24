@@ -1,7 +1,7 @@
 <div id="singleUser"> 
       <img src="<%= user.photo%>" alt="photo"/>
       <div id="userInfo">
-        <h3><%= link_to user.name, controller: "users", action: "show", id: user.id  %></h3>
+        <h3><%= link_to user.name, user_path(user)  %></h3>
         <label>Number of posts: <%= user.post_counter %></label>
       </div>
  </div>

@@ -6,8 +6,13 @@
    </div>
  
 <% @posts.each do |post| %>
-     <%= render partial: "shared/single_post", locals: { post: post } %>
+     <%= render partial: "shared/single_post", locals: { user: @user, post: post } %>
 <% end %>
-<%= button_to "See all posts", { action: "index", controller: "posts"},  method:'get' %>
- </div>
+
+        
+         <div id="buttons">
+         <%= button_to 'See All Posts', user_posts_path(@user), method: :get %>
+         <%= button_to "Add New Post", new_user_post_path(@user), method: :get%>
+     </div>
+</div>
 

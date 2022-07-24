@@ -11,5 +11,8 @@
                 <%= render partial: "shared/single_comment", locals: { comment: comment } %>
                 <% end %>
      </div>
-     <%= button_to "Add like", { action: "create", controller: "likes"},  method:'post' %>
+     <div id="buttons">
+     <%= button_to "Add Likes", user_post_likes_path(@user, @post), params: { like: { user_id: @user.id, id: @post.id}}%>
+     <%= button_to "Add Comments", new_user_post_comment_path(@user, @post), params: { id: @user.id, post_id: @post.id}, method: :get%>
+     </div>
 </div>
