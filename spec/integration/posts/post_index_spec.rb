@@ -10,49 +10,49 @@ RSpec.describe 'User post index page', type: :system do
         fourth_post = Post.create(author_id: @first_user.id, title: 'Recent', text: 'This is my recent post', comments_counter: 0, likes_counter: 0)
     end
 
-it 'I can see the users profile picture.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_css("img[src*='https://unsplash.com/photos/Photo1']")
- end
-it 'I can see the users username.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Tom')
-end
-it 'I can see the number of posts the user has written.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Number of posts: 4')
-end
-it 'I can see a posts title.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Post #', count:4)
-end
-it 'I can see some of the posts body.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Likes:0', count:4)
-    
-end
-it 'I can see the first comments on a post.' do 
-    first_comment=Comment.create(post_id: @first_post.id, author_id: @first_comment=Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'This is my first comment' )
-first_user.id, text: 'This is my first comment' )
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content(first_comment.text)
-end
-it 'I can see how many comments a post has.' do 
-    first_comment=Comment.create(post_id: @first_post.id, author_id: @first_comment=Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'This is my first comment' )
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Comments:1')
-end
-it 'I can see how many likes a post has.' do 
-    first_like= Like.create(post_id: @first_post.id, author_id: @first_user.id)
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_content('Likes:1')
-end
-it 'I can see a section for pagination if there are more posts than fit on the view.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    expect(page).to have_button('Pagination')
-end
-it 'When I click on a post, it redirects me to that posts show page.' do 
-    visit "/users/#{ @first_user.id}/posts"
-    link= find_link('Post #').first
-    expect(page).to have_content('Post #') 
-end
+    it 'I can see the users profile picture.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_css("img[src*='https://unsplash.com/photos/Photo1']")
+    end
+    it 'I can see the users username.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Tom')
+    end
+    it 'I can see the number of posts the user has written.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Number of posts: 4')
+    end
+    it 'I can see a posts title.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Post #', count:4)
+    end
+    it 'I can see some of the posts body.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Likes:0', count:4)
+        
+    end
+    it 'I can see the first comments on a post.' do 
+        @first_comment=Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'This is my first comment' )
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content(first_comment.text)
+    end
+    it 'I can see how many comments a post has.' do 
+        @first_comment=Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'This is my first comment' )
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Comments:1')
+    end
+    it 'I can see how many likes a post has.' do 
+        first_like= Like.create(post_id: @first_post.id, author_id: @first_user.id)
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_content('Likes:1')
+    end
+    it 'I can see a section for pagination if there are more posts than fit on the view.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        expect(page).to have_button('Pagination')
+    end
+    it 'When I click on a post, it redirects me to that posts show page.' do 
+        visit "/users/#{ @first_user.id}/posts"
+        link= find_link("Post #{second_post.id}")
+        expect(page).to have_content('Post #') 
+    end
+end   
