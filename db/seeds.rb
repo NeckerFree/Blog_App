@@ -34,7 +34,7 @@ first_comment=Comment.create(post_id: first_post.id, author_id: first_user.id, t
     puts('Post counter: ')
     puts(first_post.author.post_counter)
 
-    first_comment.update_counter
+    first_comment.update_comments_counter
     puts('Comments counter: ')
     puts(first_comment.post.comments_counter)
 
