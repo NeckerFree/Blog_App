@@ -43,8 +43,18 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@ElioCortesM](https://twitter.com/ElioCortesM)
 - LinkedIn: [elionelsoncortes](https://www.linkedin.com/in/elionelsoncortes/)
 
-## 🤝 Contributing
+## 🤝 Contributors
 
+👤 **Amrendra K**
+
+- GitHub: [@amrendrakind](https://github.com/amrendrakind)
+- Twitter: [@amrendrak_](https://twitter.com/amrendrak_)
+- LinkedIn: [amrendraakumar](https://linkedin.com/in/amrendraakumar)
+
+ 👤 **Alejandro Neira**
+- GitHub: [@AlejandroNeira98](https://github.com/AlejandroNeira98)
+- Twitter: [@JANP_19](https://twitter.com/JANP_19)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-neira-pachon/)
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/NeckerFree/Blog_App/issues).

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'ffi' if ENV['CHILDPROCESS_POSIX_SPAWN'] == 'true' || Gem.win_platform?
-ruby '3.1.2'
+# gem 'ffi' if ENV['CHILDPROCESS_POSIX_SPAWN'] == 'true' || Gem.win_platform?
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
@@ -54,6 +54,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0.beta2'
   # gem 'rspec-rails', '~> 6.0.0'
@@ -62,6 +63,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'bullet'
   gem 'web-console'
 end
 
