@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'User index page', type: :system do
   before(:all) do
-    User.destroy_all
     Post.destroy_all
+    User.destroy_all
     @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/Photo1',
                               bio: 'Teacher from Mexico.', post_counter: 0)
     @second_user = User.create(name: 'Lili', photo: 'https://unsplash.com/photos/Photo2',
