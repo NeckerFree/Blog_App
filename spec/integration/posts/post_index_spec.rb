@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User post index page', type: :system do
   before(:all) do
-    User.destroy_all
     Post.destroy_all
+    User.destroy_all
     @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/Photo1',
                               bio: 'Teacher from Mexico.', post_counter: 0)
     @first_post = Post.create(author_id: @first_user.id, title: 'Hello', text: 'This is my first post',
@@ -25,6 +25,7 @@ RSpec.describe 'User post index page', type: :system do
     expect(page).to have_content('Tom')
   end
   it 'I can see the number of posts the user has written.' do
+    @first_post.update_post_counter
     visit "/users/#{@first_user.id}/posts"
     expect(page).to have_content('Number of posts: 4')
   end

@@ -4,6 +4,7 @@
                 <h3 class="post_title">Post # <%= @post.id %> by <%= @user.name %> </h3>
                 <label class="counters">Comments:<%= @post.comments_counter %> Likes:<%= @post.likes_counter %> </label>
         </div>  
+        <p><%= @post.title %></p>
         <p><%= @post.text %></p>
     </div>
     <div id="commentsSection">

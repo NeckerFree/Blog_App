@@ -1,5 +1,6 @@
 <div id="singlePost">
          <h3> <%= link_to "Post ##{post.id}", user_post_path(user,post) %> </h3>
+         <p><%= post.title %></p>
          <p><%= post.text %></p>
         <label class="counters">Comments:<%= post.comments_counter %> Likes:<%= post.likes_counter %> </label>
  </div>
