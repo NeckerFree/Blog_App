@@ -43,6 +43,8 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@ElioCortesM](https://twitter.com/ElioCortesM)
 - LinkedIn: [elionelsoncortes](https://www.linkedin.com/in/elionelsoncortes/)
 
+Please update your info...
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
