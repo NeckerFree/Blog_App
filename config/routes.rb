@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
+  devise_for :users
   resources :login, only: [:index, :show] do
   end 
   resources :users, only: [:index, :show] do
