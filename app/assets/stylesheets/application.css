@@ -65,6 +65,7 @@
   text-align: right;
 }
 
+.app_body,
 #newCommentsTemplate,
 #newPostTemplate,
 #userTemplate,
@@ -91,9 +92,9 @@ button {
   margin-top: 50px;
 }
 
-input[type='text'] {
+/* input[type='text'] {
   margin: 20px;
-}
+} */
 
 input[type='submit'] {
   margin: 30px;
@@ -102,4 +103,9 @@ input[type='submit'] {
 #buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.sign {
+  margin-left: auto;
+  margin-right: 5px;
 }
