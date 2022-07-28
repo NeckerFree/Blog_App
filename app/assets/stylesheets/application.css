@@ -64,6 +64,7 @@
 .counters {
   text-align: right;
 }
+
 .app_body,
 #newCommentsTemplate,
 #newPostTemplate,
@@ -103,7 +104,8 @@ input[type='submit'] {
   display: flex;
   justify-content: space-between;
 }
-.sign{
+
+.sign {
   margin-left: auto;
   margin-right: 5px;
 }
